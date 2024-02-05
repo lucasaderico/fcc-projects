@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Survey Form</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <form id="survey-form" class="form">
+        <header>
+          <h1 id="title">Programming Survey</h1>
+          <p id="description">Let us know more about your coding experience</p>
+        </header>
+
+        <div class="content">
+          <div class="form-control">
+            <label id="name-label" for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-control">
+            <label id="email-label" for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-control">
+            <label id="number-label" for="number">Age</label>
+            <input type="number" id="number" min="13" max="120" placeholder="Enter your age" required>
+          </div>
+
+          <fieldset>
+            <legend>Do you work as a programmer?</legend>
+            <label for="yes">
+              <input type="radio" value="yes" id="yes" name="radio-options" checked>
+              Yes
+            </label>
+
+            <label for="no">
+              <input type="radio" value="no" id="no" name="radio-options">
+              No
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>What is your area of interest</legend>
+            <select name="dropdown" id="dropdown">
+              <option value="Frontend Developer">Frontend Developer</option>
+              <option value="Backend Developer">Backend Developer</option>
+              <option value="Full Stack Developer">Full Stack Developer</option>
+              <option value="Game Developer">Game Developer</option>
+              <option value="Cybersecurity">Cybersecurity</option>
+              <option value="Database Administrator">Database Administrator</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>What language(s) are you familiar with?</legend>
+            <label for="js">
+              <input type="checkbox" value="javascript" id="js">
+              JavaScript
+            </label>
+            <label for="py">
+              <input type="checkbox" value="python" id="py">
+              Python
+            </label>
+            <label for="rs">
+              <input type="checkbox" value="rust" id="rs">
+              Rust
+            </label>
+            <label for="c">
+              <input type="checkbox" value="c" id="c">
+              C
+            </label>
+            <label for="rb">
+              <input type="checkbox" value="ruby" id="rb">
+              Ruby
+            </label>
+            <label for="java">
+              <input type="checkbox" value="java" id="java">
+              Java
+            </label>
+            <label for="other">
+              <input type="checkbox" value="other" id="other">
+              Other
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tell us about your goals with coding</legend>
+            <textarea placeholder="I would like to start a company and build..."></textarea>
+          </fieldset>
+
+          <button id="submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
