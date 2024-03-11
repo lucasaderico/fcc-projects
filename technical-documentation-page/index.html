@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction_to_Node.js">
+        <header>Introduction to Node.js</header>
+
+        <div class="hamb">|||</div>
+
+        <p>Node.js is an open-source and cross-platform JavaScript runtime
+        environment. It is a popular tool for almost any kind of project!</p>
+
+        <p>Node.js runs the V8 JavaScript engine, the core of Google Chrome,
+        outside of the browser. This allows Node.js to be very performant.</p>
+
+        <p>A Node.js app runs in a single process, without creating a new
+        thread for every request. Node.js provides a set of asynchronous I/O
+        primitives in its standard library that prevent JavaScript code from
+        blocking and generally, libraries in Node.js are written using
+        non-blocking paradigms, making blocking behavior the exception rather
+        than the norm.</p>
+
+        <p>When Node.js performs an I/O operation, like reading from the
+        network, accessing a database or the filesystem, instead of blocking
+        the thread and wasting CPU cycles waiting, Node.js will resume the
+        operations when the response comes back.</p>
+
+        <p>This allows Node.js to handle thousands of concurrent connections
+        with a single server without introducing the burden of managing thread
+        concurrency, which could be a significant source of bugs.</p>
+
+        <p>Node.js has a unique advantage because millions of frontend
+        developers that write JavaScript for the browser are now able to write
+        the server-side code in addition to the client-side code without the
+        need to learn a completely different language.</p>
+
+        <p>In Node.js the new ECMAScript standards can be used without
+        problems, as you don't have to wait for all your users to update their
+        browsers - you are in charge of deciding which ECMAScript version to
+        use by changing the Node.js version, and you can also enable specific
+        experimental features by running Node.js with flags.</p>
+
+        <h3>An example Node.js application</h3>
+
+        <p>The most common example Hello World of Node.js is a
+        web server:</p>
+
+        <pre class="overflow">
+        <code>
+          const http = require('node:http');
+
+          const hostname = '127.0.0.1';
+          const port = 3000;
+
+          const server = http.createServer((req, res) => {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'text/plain');
+            res.end('Hello World\n');
+          });
+
+          server.listen(port, hostname, () => {
+            console.log(`Server running at http://${hostname}:${port}/`);
+          });
+        </code>
+        </pre>
+
+        <p>To run this snippet, save it as a <span
+          class="span-hl">server.js</span> file and run <span
+          class="span-hl">node server.js</span> in your terminal.</p>
+
+        <p>This code first includes the Node.js <span
+          class="span-hl">http</span> <span class="word-hl">module</span>.</p>
+
+        <p>Node.js has a fantastic <span class="word-hl">standard library</span>, including first-class
+        support for networking.</p>
+
+        <p>The <span class="span-hl">createServer()</span> method of <span
+          class="span-hl">http</span> creates a new HTTP server and returns
+        it.</p>
+
+        <p>The server is set to listen on the specified port and host name.
+        When the server is ready, the callback function is called, in this case
+        informing us that the server is running.</p>
+
+        <p>Whenever a new request is received, the <span
+          class="span-hl">request</span> <span class="word-hl">event</span> is called, providing two
+        objects: a request (an <span
+          class="span-hl">http.IncomingMessage</span> object) and a response
+        (an <span class="span-hl">http.ServerResponse</span> object).</p>
+
+        <p>Those 2 objects are essential to handle the HTTP call.</p>
+
+        <p>The first provides the request details. In this simple example, this
+        is not used, but you could access the request headers and request
+        data.</p>
+
+        <p>The second is used to return data to the caller.</p>
+
+        <p>In this case with:</p>
+
+        <pre>
+        <code>
+          res.statusCode = 200;
+        </code>
+        </pre>
+
+        <p>we set the statusCode property to 200, to indicate a successful
+        response.</p>
+
+        <p>We set the Content-Type header:</p>
+
+        <pre>
+        <code>
+          res.setHeader('Content-Type', 'text/plain');
+        </code>
+        </pre>
+
+        <p>and we close the response, adding the content as an argument to
+        <span class="span-hl">end()</span>:</p>
+
+        <pre>
+        <code>
+          res.end('Hello World\n');
+        </code>
+        </pre>
+
+        <h3>More examples</h3>
+
+        <p>See <a href="https://github.com/nodejs/examples"
+          target="_blank">https://github.com/nodejs/examples</a> for a list of
+        Node.js examples that go beyond hello world.</p>
+
+        <pre>
+        <code>
+          console.log('Goodbye World!');
+        </code>
+        </pre>
+
+      </section>
+
+      <section class="main-section" id="How_to_install_Node.js">
+        <header>How to install Node.js</header>
+
+        <p>Node.js can be installed in different ways. This post highlights the
+        most common and convenient ones. Official packages for all the major
+        platforms are available at <a href="https://nodejs.org/download/"
+        target="_blank">https://nodejs.org/download/</a></p>
+
+        <p>One very convenient way to install Node.js is through a package
+        manager. In this case, every operating system has its own. Other
+        package managers for MacOS, Linux, and Windows are listed in <a
+        href="https://nodejs.org/download/package-manager/"
+      target="_blank">https://nodejs.org/download/package-manager/</a>
+
+        <p><span class="span-hl">nvm</span> is a popular way to run Node.js. It
+        allows you to easily switch the Node.js version, and install new
+        versions to try and easily rollback if something breaks. It is also
+        very useful to test your code with old Node.js versions.</p>
+
+        <p class="highlight">See <a href="https://github.com/nvm-sh/nvm"
+          target="_blank">https://github.com/nvm-sh/nvm</a> for more
+        information about this option.</p>
+
+        <p>In any case, when Node.js is installed you'll have access to the
+        <span class="span-hl">node</span> executable program in the command
+        line.</p>
+      </section>
+
+      <section class="main-section" id="How_much_JavaScript_do_you_need_to_know_to_use_Node.js?">
+        <header>How much JavaScript do you need to know to use Node.js?</header>
+
+        <p>As a beginner, it's hard to get to a point where you are confident enough in
+        your programming abilities. While learning to code, you might also be confused
+        at where does JavaScript end, and where Node.js begins, and vice versa.</p>
+
+        <h3>What is recommended to learn before diving deep with Node.js?</h3>
+
+        <ul>
+          <li><a href="" target="_blank">Lexical Structure</a></li>
+          <li><a href="" target="_blank">Expressions</a></li>
+          <li><a href="" target="_blank">Data Types</a></li>
+          <li><a href="" target="_blank">Classes</a></li>
+          <li><a href="" target="_blank">Variables</a></li>
+          <li><a href="" target="_blank">Functions</a></li>
+          <li><a href="" target="_blank"><span class="span-hl">this</span> operator</a></li>
+          <li><a href="" target="_blank">Arrow Functions</a></li>
+          <li><a href="" target="_blank">Loops</a></li>
+          <li><a href="" target="_blank">Scopes</a></li>
+          <li><a href="" target="_blank">Arrays</a></li>
+          <li><a href="" target="_blank">Template Literals</a></li>
+          <li><a href="" target="_blank">Strict Mode</a></li>
+          <li><a>ECMAScript 2015 (ES6) and beyond</a></li>
+        </ul>
+
+        <p>With those concepts in mind, you are well on your road to become a
+        proficient JavaScript developer, in both the browser and in
+        Node.js.</p>
+
+        <h3>Asynchronous Programming</h3>
+
+        <p>The following concepts are also key to understand asynchronous programming,
+        which is one of the fundamental parts of Node.js:</p>
+
+        <ul>
+          <li><a href="" target="_blank">Asynchronous programming and callbacks</a></li>
+          <li><a href="" target="_blank">Timers</a></li>
+          <li><a href="" target="_blank">Promises</a></li>
+          <li><a href="" target="_blank">Async and Await</a></li>
+          <li><a href="" target="_blank">Closures</a></li>
+          <li><a href="" target="_blank">The Event Loop</a></li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Difference_between_Node.js_and_the_Browser">
+        <header>Difference between Node.js and the Browser</header>
+
+        <p>Both the browser and Node.js use JavaScript as their programming
+        language. Building apps that run in the browser is a completely
+        different thing than building a Node.js application. Despite the fact
+        that it's always JavaScript, there are some key differences that make
+        the experience radically different.</p>
+
+        <p>From the perspective of a frontend developer who extensively uses
+        JavaScript, Node.js apps bring with them a huge advantage: the comfort
+        of programming everything - the frontend and the backend - in a single
+        language.</p>
+
+        <p>You have a huge opportunity because we know how hard it is to fully,
+        deeply learn a programming language, and by using the same language to
+        perform all your work on the web - both on the client and on the
+        server, you're in a unique position of advantage.</p>
+
+        <p class="highlight">What changes is the ecosystem.</p>
+
+        <p>In the browser, most of the time what you are doing is interacting
+        with the DOM, or other Web Platform APIs like Cookies. Those do not
+        exist in Node.js, of course. You don't have the <span
+        class="span-hl">document</span>, <span class="span-hl">window</span>
+      and all the other objects that are provided by the browser.</p>
+
+        <p>And in the browser, we don't have all the nice APIs that Node.js
+        provides through its modules, like the filesystem access
+        functionality.</p>
+
+        <p>Another big difference is that in Node.js you control the
+        environment. Unless you are building an open source application that
+        anyone can deploy anywhere, you know which version of Node.js you will
+        run the application on. Compared to the browser environment, where you
+        don't get the luxury to choose what browser your visitors will use,
+        this is very convenient.</p>
+
+        <p>This means that you can write all the modern ES2015+ JavaScript that
+        your Node.js version supports. Since JavaScript moves so fast, but
+        browsers can be a bit slow to upgrade, sometimes on the web you are
+        stuck with using older JavaScript / ECMAScript releases. You can use
+        Babel to transform your code to be ES5-compatible before shipping it to
+        the browser, but in Node.js, you won't need that.</p>
+
+        <p>Another difference is that Node.js supports both the CommonJS and ES
+        module systems (since Node.js v12), while in the browser we are
+        starting to see the ES Modules standard being implemented.</p>
+
+        <p>In practice, this means that you can use both <span
+          class="span-hl">require()</span> and <span
+          class="span-hl">import</span> in Node.js, while you are limited to
+        <span class="span-hl">import</span> in the browser.</p>
+
+      </section>
+
+      <section class="main-section" id="The_V8_JavaScript_Engine">
+        <header>The V8 JavaScript Engine</header>
+
+        <p>V8 is the name of the JavaScript engine that powers Google Chrome.
+        It's the thing that takes our JavaScript and executes it while browsing
+        with Chrome.</p>
+
+        <p>V8 is the JavaScript engine i.e. it parses and executes JavaScript
+        code. The DOM, and the other Web Platform APIs (they all makeup runtime
+        environment) are provided by the browser.</p>
+
+        <p>The cool thing is that the JavaScript engine is independent of the
+        browser in which it's hosted. This key feature enabled the rise of
+        Node.js. V8 was chosen to be the engine that powered Node.js back in
+        2009, and as the popularity of Node.js exploded, V8 became the engine
+        that now powers an incredible amount of server-side code written in
+        JavaScript.</p>
+
+        <p>The Node.js ecosystem is huge and thanks to V8 which also powers
+        desktop apps, with projects like Electron.</p>
+
+        <h3>Other JS engines</h3>
+
+        <p>Other browsers have their own JavaScript engine:</p>
+
+        <ul>
+          <li>Firefox has <a href="" target="_blank">SpiderMonkey</a></li>
+          <li>Safari has <a href="" target="_blank">JavaScriptCore</a> (also called Nitro)</li>
+          <li>Edge was originally based on <a href="" target="_blank">Chakra</a> but has more recently been
+            <a href="" target="_blank">rebuilt using Chromium</a> and the V8 engine.</li>
+        </ul>
+
+        <p>and many others exist as well.</p>
+
+        <p>All those engines implement the ECMA ES-262 standard, also called
+        ECMAScript, the standard used by JavaScript.</p>
+
+        <h3>The quest for performance</h3>
+
+        <p>V8 is written in C++, and it's continuously improved. It is portable
+        and runs on Mac, Windows, Linux and several other systems.</p>
+
+        <p>In this V8 introduction, we will ignore the implementation details
+        of V8: they can be found on more authoritative sites (e.g. the V8
+        official site), and they change over time, often radically.</p>
+
+        <p>V8 is always evolving, just like the other JavaScript engines
+        around, to speed up the Web and the Node.js ecosystem.</p>
+
+        <p>On the web, there is a race for performance that's been going on for
+        years, and we (as users and developers) benefit a lot from this
+        competition because we get faster and more optimized machines year
+        after year.</p>
+
+        <h3>Compilation</h3>
+
+        <p>JavaScript is generally considered an interpreted language, but
+        modern JavaScript engines no longer just interpret JavaScript, they
+        compile it.</p>
+
+        <p>This has been happening since 2009, when the SpiderMonkey JavaScript
+        compiler was added to Firefox 3.5, and everyone followed this idea.</p>
+
+        <p>JavaScript is internally compiled by V8 with just-in-time (JIT)
+        compilation to speed up the execution.</p>
+
+        <p>This might seem counter-intuitive, but since the introduction of
+        Google Maps in 2004, JavaScript has evolved from a language that was
+        generally executing a few dozens of lines of code to complete
+        applications with thousands to hundreds of thousands of lines running
+        in the browser.</p>
+
+        <p>Our applications can now run for hours inside a browser, rather than
+        being just a few form validation rules or simple scripts.</p>
+
+        <p>In this new world, compiling JavaScript makes perfect sense because
+        while it might take a little bit more to have the JavaScript ready,
+        once done it's going to be much more performant than purely interpreted
+        code.</p>
+      </section>
+    </main>
+
+    <nav id="navbar">
+      <header>Getting started</header>
+
+      <a class="nav-link" href="#Introduction_to_Node.js">Introduction to Node.js</a>
+      <a class="nav-link" href="#How_to_install_Node.js">How to install Node.js</a>
+      <a class="nav-link" href="#How_much_JavaScript_do_you_need_to_know_to_use_Node.js?">How much JavaScript do you need to know to use Node.js?</a>
+      <a class="nav-link" href="#Difference_between_Node.js_and_the_Browser">Difference between Node.js and the Browser</a>
+      <a class="nav-link" href="#The_V8_JavaScript_Engine">The V8 JavaScript Engine</a>
+    </nav>
+
+  </body>
+</html>
