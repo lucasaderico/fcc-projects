@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --purple: #5f00bd;
+  --grey: #eeebf7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  padding-top: 80px;
+  background-color: var(--grey);
+}
+
+/* NAVBAR */
+#nav-bar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul li a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+ul li a:hover {
+  border: 1px solid var(--purple);
+  transition: border 0.5s ease-in-out;
+}
+
+.hamb {
+  display: none;
+  font-size: 30px;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+/* MAIN SECTION */ 
+#main {
+  padding: 100px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+h1 > span {
+  display: block;
+  color: var(--purple);
+  font-style: italic;
+}
+
+main p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 20px 40px;
+  font-size: 18px;
+  color: #fff;
+  background-color: var(--purple);
+  border: 3px solid var(--purple);;
+  border-radius: 4px;
+  outline: 0;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: var(--purple);
+}
+
+/* COURSES */
+#courses {
+  padding: 0 100px;
+  margin-bottom: 100px;
+}
+
+#courses h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: var(--purple);
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  padding: 20px;
+  margin: 0 12px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  min-width: 180px;
+}
+
+.box:hover {
+  box-shadow: 0px 0px 20px 2px var(--purple);
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.box i {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.boxes > .box:first-child i {
+  color: OrangeRed;
+}
+
+.boxes > .box:nth-child(2) i {
+  color: Blue;
+}
+
+.boxes > .box:last-child i {
+  color: #FFEA00;
+}
+
+.box h3 {
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.box small {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.boxes > .box:first-child {
+  margin-left: 0;
+}
+
+.boxes > .box:last-child {
+  margin-right: 0;
+}
+
+/* SIGN UP */
+#sign-up {
+  padding: 0 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#sign-up > div {
+  width: 50%;
+}
+
+#sign-up i  {
+  font-size: 40px;
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+#sign-up h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+#sign-up h2 > span {
+  display: block;
+  font-style: italic;
+  color: var(--purple);
+}
+
+#form label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+#form input:not([type="submit"]) {
+  width: 100%;
+  padding: 12px 8px;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+#form input:not([type="submit"])::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+#form #submit {
+  width: 100%;
+  padding: 16px 12px;
+  border: 1px solid var(--purple);
+  border-radius: 4px;
+  background-color: var(--purple);
+  font-size: 16px;
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+#form #submit:hover {
+  background-color: #fff;
+  color: var(--purple);
+}
+
+/* ABOUT US */
+#about-us {
+  padding: 0 100px;
+}
+
+#about-us h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+#about-us h2 span {
+  color: var(--purple);
+  font-style: italic;
+}
+
+#about-us h2 i {
+  font-size: 35px;
+  margin-left: 10px;
+  color: var(--purple);
+  position: relative;
+  top: 2px;
+}
+
+#about-us p {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* VIDEO */
+.video {
+  width: 700px;
+  height: 400px;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  border: 10px double var(--purple);
+  border-radius: 4px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 40px;
+}
+
+footer {
+  color: var(--purple);
+  font-weight: bold;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+  #about-us {
+    padding: 0;
+  }
+
+  #about-us h2, #about-us p {
+    margin-left: 30px;
+  }
+
+  .video {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: 45px;
+  }
+
+  main p {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 15px 35px;
+    font-size: 15px;
+  }
+
+  .box small {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box small span:nth-child(2) {
+    display: none;
+  }
+
+  .box small span:first-child {
+    margin-bottom: 5px;
+  }
+
+  #sign-up > div {
+    width: 100%;
+  }
+
+  .video {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #courses {
+    padding: 0 50px;
+    margin-bottom: 40px;
+  }
+
+  #courses h2 {
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: var(--purple);
+  }
+
+  #sign-up {
+    padding: 0 50px;
+    margin-bottom: 40px;
+  }
+
+  #about-us {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  #main {
+    padding: 50px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  main p {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .hamb {
+    display: block;
+  }
+
+  #courses {
+    padding: 0 20px;
+  }
+
+  #sign-up {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  main p {
+    line-height: 1.8;
+  }
+
+  #sign-up {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
