@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary: #392b6b;
+  --secondary: #51438c;
+  --purple: #b600ff;
+  --border: #7a71b1;
+  --white: #fff;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  margin-top: 80px;
+  background-color: var(--secondary);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 15px 5px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container h1 {
+  margin-bottom: 40px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.desc {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 5px;
+  font-style: italic;
+  font-size: 14px;
+  box-shadow: 0px 0px 5px 7px rgba(255, 215, 0, 0.2);
+}
+
+.desc i {
+  color: #ffd700;
+  font-size: 20px;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 70%;
+  margin-bottom: 80px;
+}
+
+.cta input {
+  width: 80%;
+  padding: 20px 10px;
+  border: 5px solid var(--border);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--white);
+  font-size: 18px;
+  outline: none;
+}
+
+.cta button {
+  width: 20%;
+  padding: 20px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 5px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+.cta button:hover {
+  box-shadow: 0px 0px 5px 7px rgba(255, 215, 0, 0.2);
+}
+
+.result {
+  font-style: italic;
+  color: #ffd700;
+}
+
+#result {
+  display: none;
+}
+
+@media (max-width: 1076px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 850px) {
+  .desc {
+    width: 90%;
+  }
+
+  .cta {
+    width: 90%;
+  }
+}
+
+@media (max-width: 650px) {
+  .cta input {
+    font-size: 16px;
+    border-width: 2px;
+  }
+
+  .cta button {
+    font-size: 16px;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 520px) {
+  .desc,
+  .cta {
+    width: 100%;
+  }
+
+  .cta {
+    flex-direction: column;
+  }
+
+  .cta input,
+  .cta button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    background-color: var(--secondary);
+  }
+
+  .container {
+    margin-top: 0;
+    box-shadow: 0 0 0 transparent;
+    border-radius: 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
