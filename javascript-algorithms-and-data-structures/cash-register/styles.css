@@ -1,0 +1,196 @@
+:root {
+  --blue: #3ca6b7;
+  --light-blue: #e5f6f3;
+  --green: #458075;
+  --green2: #008000;
+  --white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: var(--blue);
+  margin: 30px auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#change-due {
+  padding: 20px;
+  width: 400px;
+  box-shadow: 1px 1px 3px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  display: none;
+}
+
+.zero {
+  font-size: 13px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#change-due h3 {
+  color: var(--green);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#change-due h3 span {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+#change-due p,
+#cash-register li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  border-top: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+#change-due p:last-of-type,
+#cash-register li:last-of-type {
+  border-bottom: 1px solid #ccc;
+}
+
+#change-due p:nth-of-type(odd),
+#cash-register li:nth-of-type(odd) {
+  color: var(--blue);
+}
+
+#change-due p:nth-of-type(even),
+#cash-register li:nth-of-type(even) {
+  color: var(--green);
+}
+
+#input-area {
+  background-color: var(--light-blue);
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  min-width: 700px;
+  margin-bottom: 30px;
+}
+
+#input-area label {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+#input-area div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#input-area div input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+}
+
+#input-area div button {
+  cursor: pointer;
+  padding: 10px;
+  width: 30%;
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#input-area div button:hover {
+  background-color: var(--green2);
+  border-color: var(--green2);
+}
+
+#cash-register {
+  position: relative;
+  background-color: var(--light-blue);
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  min-width: 700px;
+  margin-bottom: 30px;
+}
+
+#cash-register p {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#cash-register p span {
+  color: var(--green2);
+}
+
+#cash-register h3 {
+  margin-bottom: 20px;
+  color: var(--blue);
+}
+
+@media (max-width: 715px) {
+  #input-area,
+  #cash-register {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  #input-area {
+    align-items: center;
+  }
+
+  #input-area div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #input-area div input,
+  #input-area div button {
+    width: 100%;
+  }
+
+  #cash-register p {
+    position: relative;
+    top: initial;
+    right: initial;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 430px) {
+  #change-due {
+    width: 100%;
+  }
+}
